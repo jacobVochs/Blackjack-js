@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myBlackjack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="blackJack">
+        <header>
+            <h1>BlackJack</h1>
+        </header>
+        <div class="message">
+            <p id="bankMessage">Bank <span id="amount">105$</span></p>
+            <label for="vol">Min 1$ max 200$</label>
+            <div><input type="range" id="vol" name="vol" min="1" max="200" step="1"></div>
+            <button id="passFunds">Add</button>
+        </div>
+
+        <div class="message">
+            <p id="askForBet">Bet amount</p>
+            <div id="betAmount">0$</div>
+            <div><input type="range" id="volBet" name="volBet" min="1" step="1"></div>
+            <button id="passBet">Add</button>
+        </div>
+
+        </div>
+        <div class="message">
+            <p id="messageBox"></p>
+            <div class="buttons">
+                <button id="playagain">Play again</button>
+                <button id="passFundsAgain" style="display:none">Add funds</button>
+            </div>
+        </div>
+        <div class="message">
+            <p id="insuranceBox"></p>
+            <div class="buttons">
+                <p>Do you want to pay insurance?</p>
+                <button id="insFund">Pay insurance</button>
+                <button id="insCancel">Cancel</button>
+            </div>
+        </div>
+        <div id="table">
+            <h2>Player cards</h2>
+            <div id="playersCards"></div>
+            <h2>Dealer cards</h2>
+            <div id="dealersCards"></div>
+        </div>
+        <div id="info" class="hidden">
+            <div id="insurance_info" class="hidden">Insurance available</div>
+            <div id="split_info" class="hidden">Split available</div>
+        </div>
+        <div id="points">
+            <div>Player<div id="playerPoints"></div>
+            </div>
+            <div id="playerPoints_two_wrap" class="hidden">Player Bet II<div id="playerPoints_two"></div>
+            </div>
+            <div>Dealer<div id="dealerPoints"></div>
+            </div>
+            <div>Bet<div id="bet">0 $</div>
+            </div>
+            <div id="bet_two_wrap" class="hidden">Bet II<div id="bet_two">0 $</div>
+            </div>
+            <div>Funds<div id="funds">0 $</div>
+            </div>
+            <div id="insurance_wrap" class="hidden">Insurance <div id="insurance_amount">0 $</div>
+            </div>
+
+        </div>
+        <div class="buttons">
+            <button id="hit" disabled>Hit</button>
+            <button id="hit_bet_one" class="hidden">Hit Bet I</button>
+            <button id="hit_bet_two" class="hidden">Hit Bet II</button>
+            <button id="stand" disabled>Stand</button>
+            <button id="insurance" disabled>Insurance</button>
+            <button id="split" disabled>Split</button>
+            <button id="double" disabled>Double down</button>
+        </div>
+        </div>
+        </div>
+
+    </section>
+    <script src="app/Game.js" type="module"></script>
+
+</body>
+
+</html>

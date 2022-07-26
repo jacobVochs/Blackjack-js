@@ -1,0 +1,167 @@
+* {
+	user-select: none;
+}
+
+body {
+	font-family: 'Bitter', serif;
+}
+
+h1 {
+	text-align: center;
+	font-weight: 800;
+}
+
+h2 {
+	font-size: 1.2em;
+	display: block;
+	width: 100%;
+	color: #fff;
+	border-bottom: 3px #fff solid;
+	padding-bottom: 5px;
+}
+
+#info {
+	margin: 10px 0px;
+	padding: 5px 0px;
+	text-align: center;
+	background-color: rgb(211, 222, 11);
+	border: 3px solid black;
+	border-radius: 100px;
+}
+
+#points {
+	text-align: center;
+	margin-top: 10px;
+	border-top: 3px black solid;
+	border-bottom: 3px black solid;
+	padding: 10px 0px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: row wrap;
+}
+
+#points div {
+	padding-top: 5px;
+	font-weight: bold;
+	font-size: 1.5em;
+	flex-basis: 200px;
+}
+
+#blackJack {
+	width: 800px;
+	margin: 20px auto;
+	/* position: relative; */
+}
+
+#table {
+	background-color: green;
+	padding: 100px;
+	border-radius: 100px;
+	border: 3px black solid;
+	margin: 10px 0px 0px;
+}
+
+#playersCards {
+	display: flex;
+	margin-bottom: 30px;
+	min-height: 110px;
+	justify-content: center;
+}
+
+#bet1,
+#bet2,
+#sep {
+	display: flex;
+	margin-bottom: 30px;
+	min-height: 110px;
+	justify-content: space-around;
+}
+
+#sep {
+	background: #fff;
+	width: 5px;
+	margin: 0 10px;
+}
+
+#dealersCards {
+	display: flex;
+	margin-bottom: 30px;
+	min-height: 110px;
+	justify-content: center;
+}
+
+.card {
+	background: #fff;
+	width: 50px;
+	height: 60px;
+	padding: 40px 20px;
+	font-weight: bold;
+	margin-right: 20px;
+	box-shadow: 0.2em 0.2em 0.5em #333;
+	text-align: center;
+	line-height: 60px;
+}
+
+.hearts,
+.diamonds {
+	color: #ff0000;
+}
+
+.spades,
+.clubs {
+	color: #000;
+}
+
+.cardHidden {
+	background: rgb(252, 241, 244);
+	background: radial-gradient(circle, rgba(252, 241, 244, 1) 52%, rgba(63, 180, 251, 1) 52%);
+	color: rgba(0, 0, 0, 0)
+}
+
+
+.message {
+	display: none;
+	z-index: 9999;
+	position: absolute;
+	top: 25vh;
+	left: calc(50vw - 500px);
+	width: 800px;
+	padding: 50px 100px;
+	background-color: rgba(255, 255, 255, 0.98);
+	font-size: 3em;
+	font-weight: bold;
+	text-align: center;
+	-webkit-box-shadow: -1px 14px 73px -22px rgba(0, 0, 0, 0.56);
+	-moz-box-shadow: -1px 14px 73px -22px rgba(0, 0, 0, 0.56);
+	box-shadow: -1px 14px 73px -22px rgba(0, 0, 0, 0.56);
+}
+
+.buttons {
+	/* padding-top: 50px; */
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	flex-basis: 300px;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: row wrap;
+
+}
+
+.hidden {
+	display: none;
+}
+
+button {
+	padding: 10px 30px;
+	border-radius: 30px;
+	background: #000;
+	color: #fff;
+	margin: 15px 50px;
+}
+
+button:disabled {
+	background: #777;
+	color: #aaa;
+}
