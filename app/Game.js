@@ -142,7 +142,8 @@ class Game {
         this.passBet.addEventListener('click', (event) => {
             this.betAsk.hide()
             // bank.subPlayerFunds();
-            this.bet.textContent = `${bank.setPlayerBet(parseInt(bank.playerBet).toFixed(2))}$`;
+            // this.bet.textContent = `${bank.setPlayerBet(parseInt(bank.playerBet).toFixed(2))}$`;
+            this.bet.textContent = `${bank.playerBet}$`;
             this.funds.textContent = `${bank.subPlayerFunds()}$`;
             this.playerPoints.classList.remove('hidden');
             this.dealerPoints.classList.remove('hidden');
@@ -261,12 +262,12 @@ class Game {
         this.betAsk.show();
 
         // bank.setPlayerBet(bank.playerMoney / 2)
-        this.betDisplay.textContent = `${bank.setPlayerBet(bank.playerMoney / 2)}$`;
+        this.betDisplay.textContent = `${bank.setPlayerBet((bank.playerMoney))}$`;
         this.betSet.setAttribute("value", bank.playerMoney.toString());
         this.betSet.setAttribute("max", bank.playerMoney.toString());
 
         if (Number.isInteger(bank.playerMoney) === false) {
-            this.betSet.setAttribute('step', '0.1');
+            this.betSet.setAttribute('step', '0.01');
         }
 
 
@@ -278,7 +279,7 @@ class Game {
     }
 
     setAmountOfMoney() {
-        this.funds.textContent = `${bank.setPlayerMoney(parseInt(this.vol.value))}$`;
+        this.funds.textContent = `${bank.setPlayerMoney(this.vol.value)}$`;
         this.bankMessage.hide();
 
         if (bank.playerMoney === 1) {
@@ -516,12 +517,13 @@ class Game {
         this.hit_bet_one.classList.add('hidden');
         this.hit_bet_two.classList.add('hidden');
         bank.clearBet();
-        if (bank.playerMoney <= 0) {
+        if (bank.playerMoney <= 0.1) {
             this.updateFunds(bet);
             bank.playerBet_two = 0;
             if (this.is_split_set == false) {
                 this.updateFunds(bet_two);
             }
+            this.funds.textContent = '0.00$'
             this.messageBox.setText(`${this.result_info}\nBrak $$$`).show();
             this.playAgainButton.style.display = 'none';
             this.fundsAgainButton.style.display = 'inline-block';
@@ -610,7 +612,7 @@ class Game {
             bank.addWin(result);
             console.log(bank.playerMoney, result);
             if (this.is_split_set == false) {
-                this.result_info = (`Player Wins\nWin: ${result}$`);
+                this.result_info = (`Player Wins\nWin: ${result.toFixed(2)}$`);
                 this.balanceCheck();
             } else {
                 let sum = parseInt(result + this.bet_two_win_val).toFixed(2);
@@ -650,7 +652,7 @@ class Game {
             let result = parseInt(bank.playerBet) + bank.playerBet * 0.25;
             bank.addWin(result);
             if (this.is_split_set == false) {
-                this.result_info = (`Player Wins\nWin: ${result}$`);
+                this.result_info = (`Player Wins\nWin: ${result.toFixed(2)}$`);
                 this.balanceCheck();
             } else {
                 let sum = parseInt(result + this.bet_two_win_val).toFixed(2);
