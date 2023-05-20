@@ -554,10 +554,10 @@ class Game {
 		this.hit_bet_two.classList.add('hidden');
 		bank.clearBet();
 		if (bank.playerMoney <= 0.1) {
-			this.updateFunds(bet);
+			this.updateFunds(bet.toFixed(2));
 			bank.playerBet_two = 0;
 			if (this.is_split_set == false) {
-				this.updateFunds(bet_two);
+				this.updateFunds(bet_two.toFixed(2));
 			}
 			this.funds.textContent = '0.00$';
 			this.messageBox.setText(`${this.result_info}\nBrak $$$`).show();
@@ -568,7 +568,7 @@ class Game {
 			// this.updateFunds(bet);
 			bank.playerBet_two = 0;
 			if (this.is_split_set == false) {
-				this.updateFunds(bet_two);
+				this.updateFunds(bet_two.toFixed(2));
 			}
 			this.messageBox.setText(`${this.result_info}`).show();
 			this.playAgainButton.style.display = 'inline-block';
